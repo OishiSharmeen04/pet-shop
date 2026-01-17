@@ -1,5 +1,3 @@
-//src/routes/index.ts
-
 import { Router } from "express";
 import categoryRouter from "../modules/category/category.route";
 import productRouter from "../modules/product/product.route";
