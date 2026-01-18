@@ -56,7 +56,7 @@ const getAllProducts = async (query: {
     where: {
       isActive: true,
 
-      // 🔍 SEARCH
+      // SEARCH
       ...(search && {
         name: {
           contains: search,
@@ -64,7 +64,7 @@ const getAllProducts = async (query: {
         },
       }),
 
-      // 🧩 FILTER
+      // FILTER
       ...(categoryId && { categoryId }),
 
       ...(minPrice || maxPrice
@@ -77,7 +77,7 @@ const getAllProducts = async (query: {
         : {}),
     },
 
-    // 📦 LIGHT DATA ONLY
+    //  LIGHT DATA ONLY
     select: {
       id: true,
       name: true,
@@ -93,12 +93,12 @@ const getAllProducts = async (query: {
       },
     },
 
-    // ↕️ SORT
+    // SORT
     orderBy: {
       [sortBy]: sortOrder,
     },
 
-    // 📄 PAGINATION
+    // PAGINATION
     skip,
     take: limit,
   });
